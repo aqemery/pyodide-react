@@ -46,7 +46,7 @@ class PythonRunner {
   }
   run(code) {
     if (this._pyodide) {
-      this._pyodide.runPython(code);
+      return this._pyodide.runPython(code);
     }
   }
 }

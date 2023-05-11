@@ -27,5 +27,38 @@ npm run dev
 ```
 
 
+## How it works
+
+You will find the Pyodide code in `src/pyodide.js` and the React code in `src/App.js`.
+
+`pyodide.js` is a wrapper around the Pyodide NPM package:
+
+https://www.npmjs.com/package/pyodide
+
+
+This file uses a singleton pattern to ensure that only one instance of Pyodide is created. 
+
+```javascript
+import { Pyodide } from "./pyodide";
+
+const pyodide = Pyodide.getInstance();
+pyodide.setOutput((text) => {
+    console.log(text);
+});
+pyodide.run(pyprompt);
+```
+
+By default, Pyodide will output to the web console, but the setOutput function allows you to override this behavior so that you can display the output in your app or parse it in some way.
+
+The run function takes a string of Python code and runs it in the Pyodide interpreter. It will also return the last value of the code that was run.
+
+```javascript
+const output = pyodide.run("1 + 1");
+```
+
+
+
+
+
 
 
