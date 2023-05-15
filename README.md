@@ -1,6 +1,8 @@
 # pyodide-react
 An example of using Pyodide in React
 
+See [Using Python inside a React web app with Pyodide](https://adamemery.dev/articles/pyodide-react) for more details.
+ 
 Pyodide is a Python interpreter compiled for WebAssembly. It allows you to run Python code in the browser. 
 
 https://pyodide.org/en/stable/
